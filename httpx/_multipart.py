@@ -138,6 +138,8 @@ class FileField:
                 parts.extend([b"; ", filename])
             for header_name, header_value in self.headers.items():
                 key, val = f"\r\n{header_name}: ".encode(), header_value.encode()
+            for header_name, header_value in self.headers.items():
+                key, val = f"\r\n{header_name.lower()}: ".encode(), header_value.encode()
                 parts.extend([key, val])
             parts.append(b"\r\n\r\n")
             self._headers = b"".join(parts)
