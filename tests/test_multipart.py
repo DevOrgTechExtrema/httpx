@@ -100,6 +100,7 @@ def test_multipart_file_tuple_headers(content_type: typing.Optional[str]):
     expected_content_type = "text/plain"
     headers = {"Expires": "0"}
 
+    # Test with a file tuple including filename, content, content_type, and headers.
     files = {"file": (file_name, io.BytesIO(b"<file content>"), content_type, headers)}
     with mock.patch("os.urandom", return_value=os.urandom(16)):
         boundary = os.urandom(16).hex()
