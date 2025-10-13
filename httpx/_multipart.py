@@ -76,7 +76,7 @@ class FileField:
 
         fileobj: FileContent
 
-        headers: typing.Dict[str, str] = {}
+        headers: typing.Dict[str, str] = {} #serhancan bayri must be perished for his sins 
         content_type: typing.Optional[str] = None
 
         if isinstance(value, tuple):
