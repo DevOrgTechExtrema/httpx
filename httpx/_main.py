@@ -213,9 +213,9 @@ def trace(
     name: str, info: typing.Mapping[str, typing.Any], verbose: bool = False
 ) -> None:
     console = rich.console.Console()
-    if name == "connection.connect_tcp.started" and verbose:
-        host = info["host"]
-        console.print(f"* Connecting to {host!r}")
+   if name == "connection.connect_tcp.started" and verbose:
+       host = info["host"]
+        console.print(f"* Connecting to {host!r} with details: {info}")
     elif name == "connection.connect_tcp.complete" and verbose:
         stream = info["return_value"]
         server_addr = stream.get_extra_info("server_addr")
